@@ -14,13 +14,13 @@ public:
     CLogReader(CLogReader&&) = delete;
     CLogReader& operator=(CLogReader&&) = delete;
 
-    bool    Open(const char* filename);      // открытие файла, false - ошибка
-    void    Close();                         // закрытие файла
+    bool    Open(const char* filename);      // РѕС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°, false - РѕС€РёР±РєР°
+    void    Close();                         // Р·Р°РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°
 
-    bool    SetFilter(const char* filter);   // установка фильтра строк, false - ошибка
-    bool    GetNextLine(char* buf,           // запрос очередной найденной строки,
-                        const int bufsize);  // buf - буфер, bufsize - максимальная длина
-                                             // false - конец файла или ошибка
+    bool    SetFilter(const char* filter);   // СѓСЃС‚Р°РЅРѕРІРєР° С„РёР»СЊС‚СЂР° СЃС‚СЂРѕРє, false - РѕС€РёР±РєР°
+    bool    GetNextLine(char* buf,           // Р·Р°РїСЂРѕСЃ РѕС‡РµСЂРµРґРЅРѕР№ РЅР°Р№РґРµРЅРЅРѕР№ СЃС‚СЂРѕРєРё,
+                        const int bufsize);  // buf - Р±СѓС„РµСЂ, bufsize - РјР°РєСЃРёРјР°Р»СЊРЅР°СЏ РґР»РёРЅР°
+                                             // false - РєРѕРЅРµС† С„Р°Р№Р»Р° РёР»Рё РѕС€РёР±РєР°
 
 private:
     bool string_search(const char* line, const char* filter);
